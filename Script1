@@ -1,0 +1,25 @@
+rm(list=ls(all=TRUE))
+
+library(ggplot2)
+library(reshape)
+library(grid)
+
+# Ajusta a pasta onde está o banco de dados
+# setwd("C:/")
+
+# Leitura dos dados
+dados <- read.csv("dadosFM8.CSV", head = T, sep=";")
+
+attach(dados)
+head(dados)
+class(Domain)
+dados[order(Domain),]
+names(dados)
+
+# Separando o conjunto de dados por dominio
+table(dados$Domain)
+quali<-dados[Domain == "Quality of Life",]
+fisico<-dados[Domain == "Physical",]
+psico<-dados[Domain == "Psych",]
+social<-dados[Domain == "Social",]
+ambiente<-dados[Domain == "Environment",]
