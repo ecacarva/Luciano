@@ -1,4 +1,7 @@
+# Teste Elias
+
 rm(list=ls(all=TRUE))
+
 
 library(ggplot2)
 library(reshape)
